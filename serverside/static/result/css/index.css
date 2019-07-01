@@ -1,0 +1,21 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #000000;
+}
+
+h3 {
+  color: #000000;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#tab {
+  padding-top: 1000;
+}
+
+#hidden{
+  display: none;
+}

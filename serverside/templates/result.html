@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'result/css/index.css' %}">
+  </head>
+    <body>
+      <h1 id="title"><font size = "8">「キゲン」を見える化</font></h1>
+      <table id ="tab" align="center">
+        <tr>
+          {% for user in user_list %}
+            <td align="center"　width="1000"><font size = "6">{{user.name}}</font></td>
+          {% endfor %}
+        </tr>
+        <tr>
+          {% for user in user_list %}
+            {% if user.predicted == 0 %}
+              <td align="center"　width="1000"><img src="{% static 'result/good.png' %}" width="300" height="300"></td>
+            {% elif user.predicted == 1 %}
+              <td align="center"　width="1000"><img src="{% static 'result/normal.png' %}" width="300" height="300"></td>
+            {% else %}
+              <td align="center"　width="1000"><img src="{% static 'result/bad.png' %}" width="300" height="300"></td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+      </table>
+      <script type="text/javascript" src="{% static 'result/public/javascript/sample.js' %}"></script>
+      {% for k,v in data.items %}
+	<h2> {{k}} : {{v}} </h2>
+      {% endfor %}
+
+      {% for k,v in expression_dist.items %}
+	<h2> {{k}} : {{v}} </h2>
+      {% endfor %}
+    </body>
+</html>

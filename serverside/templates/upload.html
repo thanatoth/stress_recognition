@@ -1,0 +1,5 @@
+<form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="投稿" />
+</form>
